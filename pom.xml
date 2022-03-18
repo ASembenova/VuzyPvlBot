@@ -109,7 +109,7 @@
 	</build>-->
 
 
-	<build>
+	<!--<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -120,7 +120,36 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
+	</build>-->
+	
+	<build>
+  <plugins>
+    <plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>single</goal>
+        </goals>
+      </execution>
+    </executions>
+    <configuration>
+      <archive>
+        <manifest>
+          <addClasspath>true</addClasspath>
+          <mainClass>kz.saa.vuzy_pvl_bot.VuzyPvlBotApplication</mainClass>
+        </manifest>
+      </archive>
+      <descriptorRefs>
+        <descriptorRef>jar-with-dependencies</descriptorRef>
+      </descriptorRefs>
+    </configuration>
+  </plugin> 
+  </plugins>
+</build>
+	
+	
 
 
 
