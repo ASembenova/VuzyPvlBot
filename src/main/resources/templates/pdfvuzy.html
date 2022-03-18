@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"/>
+    <style type="text/css">
+        body {
+            font-family: Arial, Arial bold, helvetica, sans-serif;
+            font-size: 8pt;
+        }
+
+        table {
+            border-collapse: collapse;
+            color: #686461;
+        }
+        caption {
+            padding: 10px;
+            color: white;
+            background: #8FD4C1;
+            font-size: 18px;
+            text-align: left;
+            font-weight: bold;
+        }
+        th {
+            border-bottom: 3px solid #B9B29F;
+            padding: 10px;
+            text-align: left;
+            font-weight: normal;
+        }
+        td {
+            padding: 10px;
+        }
+        tr:nth-child(odd) {
+            background: white;
+        }
+        tr:nth-child(even) {
+            background: #E8E6D1;
+        }
+        th:first-child, td:first-child {font-weight: bold}
+    </style>
+</head>
+<body>
+
+
+<!--<div id="vuzy">
+    <div th:if="${not #lists.isEmpty(vuzy)}">
+        <table class="students_table paginate-table">
+            <caption>ВУЗы Павлодарской области</caption>
+            <thead>
+            <tr>
+                <th th:text="${metadata.getName1Ru()}"></th>
+                <th th:text="${metadata.getName2Ru()}"></th>
+                <th th:text="${metadata.getName3Ru()}"></th>
+                <th th:text="${metadata.getName4Ru()}"></th>
+                <th th:text="${metadata.getName5Ru()}"></th>
+                <th th:text="${metadata.getName8Ru()}"></th>
+                <th th:text="${metadata.getName9Ru()}"></th>
+                <th th:text="${metadata.getName1Ru()}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="v : ${vuzy}">
+                <td th:text="${v.name1}"></td>
+                <td th:text="${v.name2}"></td>
+                <td th:text="${v.name3}"></td>
+                <td th:text="${v.name4}"></td>
+                <td th:text="${v.name5}"></td>
+                <td th:text="${v.name8}"></td>
+                <td th:text="${v.name9}"></td>
+                <td th:text="${v.name10}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+<span th:text="'Count:' + ${#lists.size(vuzy)}"></span>
+
+
+<div>
+    <div th:if="${not #lists.isEmpty(vuzy)}">
+        <table class="students_table paginate-table">
+            <caption>ВУЗы Павлодарской области</caption>
+            <thead>
+            <tr>
+                <th>Параметр</th>
+                <th th:each="v : ${vuzy}" th:text="${v.name1}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td th:text="${metadata.getName2Ru()}"></td>
+                <td th:each="v : ${vuzy}" th:text="${v.name2}"></td>
+            </tr>
+            <tr>
+                <td th:text="${metadata.getName3Ru()}"></td>
+                <td th:each="v : ${vuzy}" th:text="${v.name3}"></td>
+            </tr>
+            <tr>
+                <td th:text="${metadata.getName4Ru()}"></td>
+                <td th:each="v : ${vuzy}" th:text="${v.name4}"></td>
+            </tr>
+            <tr>
+                <td th:text="${metadata.getName5Ru()}"></td>
+                <td th:each="v : ${vuzy}" th:text="${v.name5}"></td>
+            </tr>
+            <tr>
+                <td th:text="${metadata.getName8Ru()}"></td>
+                <td th:each="v : ${vuzy}" th:text="${v.name8}"></td>
+            </tr>
+            <tr>
+                <td th:text="${metadata.getName9Ru()}"></td>
+                <td th:each="v : ${vuzy}" th:text="${v.name9}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+</body>
+</html>
