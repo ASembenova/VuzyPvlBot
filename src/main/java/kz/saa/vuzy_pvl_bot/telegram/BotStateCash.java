@@ -39,18 +39,6 @@ public class BotStateCash {
     }
 
 
-
-    /*public void saveBotState(Long userId, BotState botState) {
-        botStateMap.put(userId, botState);
-    }
-
-    public BotState getBotState(Long userID){
-        if(botStateMap.get(userID)==null){
-            botStateMap.put(userID, BotState.START);
-        }
-        return botStateMap.get(userID);
-    }*/
-
     public boolean isEmpty(){
         return botStateMap.isEmpty();
     }

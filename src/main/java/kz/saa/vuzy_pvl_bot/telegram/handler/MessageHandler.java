@@ -46,7 +46,9 @@ public class MessageHandler {
                 }
             }
         } else {
-            botStateCash.saveBotState(userId, newBotState);
+            if(!oldBotState.equals(newBotState)){
+                botStateCash.saveBotState(userId, newBotState);
+            }
         }
 
         System.out.println(botStateCash.getStack(chatId));
